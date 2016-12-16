@@ -1,0 +1,55 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: url("../img/drummer.jpg"); /*source: https://commons.wikimedia.org/wiki/File:David_Keith,_Drummer.jpg*/
+  background-size: cover;
+}
+
+.programcontainer{
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+}
+
+
+.keycontainer{
+  width: 60vw;
+  display: flex;
+  align-self: center;
+  justify-content: space-around;
+
+}
+.key{
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 4em;
+  height: 3em;
+  border: 5px solid rgb(0,0,0);
+  padding: 1em;
+  border-radius: 5px;
+  text-align: center;
+  transition: all 0.1s;
+}
+
+.playing {
+  transform: scale(1.1);
+  border-color: rgb(219, 205, 99);
+  box-shadow: 0 0 10px rgb(219, 205, 99);
+
+}
+
+kbd{
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+.sound{
+  font-weight: normal;
+  font-size: 11px;
+  color: rgb(219, 205, 99);
+  text-transform: uppercase;
+}
