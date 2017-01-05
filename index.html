@@ -54,7 +54,6 @@
         </div>
       </div>
     </div>
-    </div>
 
     <audio data-key="65" src="sounds/clap.wav"></audio>
     <audio data-key="83" src="sounds/hihat.wav"></audio>
@@ -65,4 +64,28 @@
     <audio data-key="74" src="sounds/snare.wav"></audio>
     <audio data-key="75" src="sounds/tom.wav"></audio>
     <audio data-key="76" src="sounds/tink.wav"></audio>
+
+    <script>
+      function playDrum(e){
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+        if (!audio) return; //Stops functon from running when audio is null.
+        audio.currentTime = 0; //Rewinds to start of audio file if key is pressed before end.
+        audio.play();
+        key.classList.add('playing');
+      }
+
+      function removeTrans(e){
+        if(e.propertyName !== 'transform') return; // Return if it's not a transform.
+        console.log(e.propertyName);
+        this.classList.remove('playing');
+
+      }
+
+      const keys = document.querySelectorAll('.key');
+      keys.forEach(key => key.addEventListener('transitionend', removeTrans));
+
+      window.addEventListener('keydown', playDrum);
+    </script>
+
   </body>

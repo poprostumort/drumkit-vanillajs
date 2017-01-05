@@ -17,10 +17,8 @@ body{
 
 
 .keycontainer{
-  width: 60vw;
   display: flex;
   align-self: center;
-  justify-content: space-around;
 
 }
 .key{
@@ -29,13 +27,14 @@ body{
   height: 3em;
   border: 5px solid rgb(0,0,0);
   padding: 1em;
+  margin: 1em;
   border-radius: 5px;
   text-align: center;
   transition: all 0.1s;
 }
 
 .playing {
-  transform: scale(1.1);
+  transform: scale(1.5);
   border-color: rgb(219, 205, 99);
   box-shadow: 0 0 10px rgb(219, 205, 99);
 
